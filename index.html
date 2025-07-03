@@ -7,17 +7,27 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <button class="sidebar-fab" aria-label="Mostrar sidebar" style="display:none;">
+    <svg width="32" height="32" viewBox="0 0 36 36"><rect y="8" width="36" height="4" rx="2" fill="#fff"/><rect y="16" width="36" height="4" rx="2" fill="#fff"/><rect y="24" width="36" height="4" rx="2" fill="#fff"/></svg>
+  </button>
   <aside class="sidebar">
     <div class="sidebar-header">
-      <div class="logo">
-        <svg width="40" height="40" viewBox="0 0 40 40" fill="none"><circle cx="20" cy="20" r="20" fill="#fff"/></svg>
-        <span class="brand">ACTIVA</span>
+      <div class="logo-row">
+        <div class="logo">
+          <img src="images/logo.png" alt="Logo ACTIVA" class="logo-img" />
+        </div>
+        <button class="sidebar-toggle" aria-label="Minimizar sidebar">
+          <svg width="36" height="36" viewBox="0 0 36 36"><rect y="8" width="36" height="4" rx="2" fill="#fff"/><rect y="16" width="36" height="4" rx="2" fill="#fff"/><rect y="24" width="36" height="4" rx="2" fill="#fff"/></svg>
+        </button>
       </div>
       <div class="clinic-selector">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/Colsanitas_logo.png" alt="Clínica Colsanitas" class="clinic-logo">
+        <img src="images/col.png" alt="Clínica Colsanitas" class="clinic-logo">
         <span>Clínica Colsanitas</span>
         <svg width="16" height="16" viewBox="0 0 16 16"><path d="M4 6l4 4 4-4" stroke="#fff" stroke-width="2" fill="none"/></svg>
       </div>
+      <form class="sidebar-search">
+        <input type="text" placeholder="Buscar tarea..." />
+      </form>
     </div>
     <nav class="sidebar-menu">
       <ul>
@@ -43,10 +53,65 @@
     </div>
   </aside>
   <header class="main-header">
-    <!-- Header content aquí -->
+    <div class="header-left">
+      <button class="settings-btn" aria-label="Configuración">
+        <svg width="32" height="32" viewBox="0 0 32 32"><circle cx="16" cy="16" r="14" fill="#ede7f6"/><path d="M16 11a5 5 0 100 10 5 5 0 000-10zm0 8a3 3 0 110-6 3 3 0 010 6z" fill="#5e35b1"/></svg>
+      </button>
+      <div class="settings-dropdown">
+        <button class="dropdown-icon" aria-label="Calendario">
+          <svg width="28" height="28" viewBox="0 0 28 28"><rect x="4" y="8" width="20" height="16" rx="4" fill="#5e35b1"/><rect x="8" y="4" width="2" height="6" rx="1" fill="#fff"/><rect x="18" y="4" width="2" height="6" rx="1" fill="#fff"/></svg>
+        </button>
+        <button class="dropdown-icon" aria-label="Tareas">
+          <svg width="28" height="28" viewBox="0 0 28 28"><rect x="4" y="6" width="20" height="16" rx="4" fill="#5e35b1"/><path d="M8 12h12M8 16h8" stroke="#fff" stroke-width="2"/></svg>
+        </button>
+        <button class="dropdown-icon" aria-label="Buscar">
+          <svg width="28" height="28" viewBox="0 0 28 28"><circle cx="13" cy="13" r="8" stroke="#fff" stroke-width="2" fill="#5e35b1"/><line x1="19" y1="19" x2="25" y2="25" stroke="#5e35b1" stroke-width="2"/></svg>
+        </button>
+        <button class="dropdown-icon" aria-label="Usuario">
+          <svg width="28" height="28" viewBox="0 0 28 28"><circle cx="14" cy="10" r="6" fill="#5e35b1"/><rect x="6" y="18" width="16" height="6" rx="3" fill="#5e35b1"/></svg>
+        </button>
+      </div>
+    </div>
+    <div class="header-center">
+      <form class="search-bar">
+        <input type="text" placeholder="¿Qué estas buscando?" />
+        <button type="submit" aria-label="Buscar">
+          <svg width="24" height="24" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8" stroke="#5e35b1" stroke-width="2" fill="none"/><line x1="17" y1="17" x2="21" y2="21" stroke="#5e35b1" stroke-width="2"/></svg>
+        </button>
+      </form>
+    </div>
+    <div class="header-right">
+      <button class="icon-btn" aria-label="Notificaciones">
+        <svg width="28" height="28" viewBox="0 0 28 28"><path d="M14 4a6 6 0 016 6v3c0 1.1.9 2 2 2v2H6v-2c1.1 0 2-.9 2-2v-3a6 6 0 016-6z" fill="#c62828"/><circle cx="22" cy="8" r="3" fill="#d32f2f"/></svg>
+      </button>
+      <button class="icon-btn" aria-label="Mensajes">
+        <svg width="28" height="28" viewBox="0 0 28 28"><rect x="4" y="6" width="20" height="16" rx="4" fill="#c62828"/><path d="M4 8l10 7 10-7" stroke="#fff" stroke-width="2" fill="none"/></svg>
+      </button>
+      <div class="user-avatar">
+        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Usuario" />
+        <div class="profile-dropdown">
+          <form>
+            <label>Cliente
+              <select><option>Opción 1</option></select>
+            </label>
+            <label>Zona
+              <select><option>Opción 1</option></select>
+            </label>
+            <label>Rol
+              <select><option>Opción 1</option></select>
+            </label>
+            <button type="button" class="logout-btn">SALIR</button>
+          </form>
+        </div>
+      </div>
+    </div>
   </header>
   <main class="main-content">
-    <!-- Contenido principal aquí -->
+    <div class="content-header">
+      <h1>Bienvenido a ACTIVA</h1>
+      <p>Selecciona una opción del menú para comenzar.</p>
+    </div>
+    <!-- Aquí se mostrarán los módulos o vistas seleccionadas -->
   </main>
   <script src="app.js"></script>
 </body>
